@@ -40,5 +40,8 @@ module UchiInternshipTask
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Auth config (config/auth.yml)
+    config.x.auth = config_for(:auth)
   end
 end

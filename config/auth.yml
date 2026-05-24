@@ -1,0 +1,11 @@
+default: &default
+  token_salt: <%= ENV.fetch('AUTH_TOKEN_SALT') { 'simple_auth_token_salt' } %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
