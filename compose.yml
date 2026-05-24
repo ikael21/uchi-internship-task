@@ -1,0 +1,54 @@
+x-base-service: &base-service
+  networks:
+    - default
+  stdin_open: true
+  tty: true
+
+x-api-service: &base-api-service
+  <<: *base-service
+  environment:
+    AUTH_TOKEN_SALT: uchi_internship_task_salt
+    RAILS_ENV: development
+    DB_HOST: db
+    DB_PORT: 5432
+    DB_NAME: uchi_internship_task_development
+    DB_USER: postgres
+    DB_PASSWORD: postgres
+
+x-db-service: &base-db-service
+  <<: *base-service
+  image: postgres:18.3-alpine
+  environment:
+    POSTGRES_DB: uchi_internship_task_development
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+
+services:
+  api:
+    <<: *base-api-service
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+
+  db:
+    <<: *base-db-service
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  db_data:
+
+networks:
+  default:
