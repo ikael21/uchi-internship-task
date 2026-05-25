@@ -1,0 +1,14 @@
+one:
+  school: one
+  number: 1
+  letter: A
+
+two:
+  school: one
+  number: 1
+  letter: B
+
+three:
+  school: two
+  number: 2
+  letter: A

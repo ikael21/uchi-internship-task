@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    errors:
+      models:
+        student:
+          attributes:
+            school_class:
+              must_belong_to_school: "must belong to the specified school"
