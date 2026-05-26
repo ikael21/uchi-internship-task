@@ -19,6 +19,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_24_125725) do
     t.string "letter", null: false
     t.integer "number", null: false
     t.bigint "school_id", null: false
+    t.integer "students_count", default: 0, null: false
     t.datetime "updated_at", null: false
     t.index ["school_id", "number", "letter"], name: "index_school_classes_on_school_id_and_number_and_letter", unique: true
     t.index ["school_id"], name: "index_school_classes_on_school_id"
