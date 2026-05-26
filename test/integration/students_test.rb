@@ -9,6 +9,16 @@ class StudentsTest < ActionDispatch::IntegrationTest
     @other_school_class = school_classes(:three)
   end
 
+  test 'GET /schools/:school_id/classes/:school_class_id/students returns students' do
+    get "/schools/#{@school.id}/classes/#{@school_class.id}/students"
+
+    assert_response :ok
+
+    body = json_response
+    assert body[:data].present?
+    assert body[:meta].present?
+  end
+
   test 'POST /students creates a student and returns token' do
     params = {
       first_name: 'First',

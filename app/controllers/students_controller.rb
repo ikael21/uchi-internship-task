@@ -3,6 +3,17 @@ class StudentsController < ApplicationController
 
   before_action :authenticate, only: :destroy
 
+  def index
+    students = Student.for_class_in_school(*params.expect(:school_id, :school_class_id))
+      .page(params[:page])
+      .per(params[:per_page])
+
+    render json: {
+      data: StudentSerializer.new(students).serializable_hash,
+      meta: pagination_meta(students)
+    }
+  end
+
   def create
     student = Student::CreateForm.new(student_params)
     return render_errors(student) unless student.save
