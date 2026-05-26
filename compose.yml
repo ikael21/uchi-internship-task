@@ -32,6 +32,7 @@ services:
         condition: service_healthy
     ports:
       - "3000:3000"
+    command: bash -c "rails db:prepare && dev -b 0.0.0.0"
     volumes:
       - ./:/app
 

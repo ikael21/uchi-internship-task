@@ -1,24 +1,36 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Uchi Internship Task
 
-Things you may want to cover:
+Перед запуском нужно установить
 
-* Ruby version
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-* System dependencies
+- Запустить приложение
 
-* Configuration
+```bash
+docker compose up
+```
 
-* Database creation
+или
 
-* Database initialization
+```bash
+make app
+```
 
-* How to run the test suite
+## OpenAPI документация
 
-* Services (job queues, cache servers, search engines, etc.)
+- [localhost:3000/api-docs](http://localhost:3000/api-docs/)
 
-* Deployment instructions
+## Допущения
 
-* ...
+- `Class` переименован в `SchoolClass`, так как `Class` является зарезервированным словом в Ruby и использование его в модели приводит к неоднозначностям и потенциальным конфликтам в коде (например, с `Object#class`).
+
+## Полезные команды
+
+- Зайти в консоль
+
+```bash
+make app-console
+```
+
