@@ -17,6 +17,10 @@ gem 'ostruct'
 gem 'freezolite'
 gem 'alba'
 
+# OpenAPI docs
+gem 'rswag-api'
+gem 'rswag-ui'
+
 group :development, :test do
   gem 'awesome_print'
 

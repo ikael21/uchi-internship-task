@@ -239,6 +239,12 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     require-hooks (0.4.0)
+    rswag-api (2.17.0)
+      activesupport (>= 5.2, < 8.2)
+      railties (>= 5.2, < 8.2)
+    rswag-ui (2.17.0)
+      actionpack (>= 5.2, < 8.2)
+      railties (>= 5.2, < 8.2)
     rubocop (1.86.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -312,6 +318,8 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 8.1.3)
+  rswag-api
+  rswag-ui
   rubocop-rails-omakase
   tzinfo-data
 
@@ -408,6 +416,8 @@ CHECKSUMS
   regexp_parser (2.12.0) sha256=35a916a1d63190ab5c9009457136ae5f3c0c7512d60291d0d1378ba18ce08ebb
   reline (0.6.3) sha256=1198b04973565b36ec0f11542ab3f5cfeeec34823f4e54cebde90968092b1835
   require-hooks (0.4.0) sha256=005f4c6435b4edae73e358cdbaba48370a4121f9ce893d5d2a3c66fce855677d
+  rswag-api (2.17.0) sha256=728b336b65168ab8ab6024b0e5d267b485c22ccdeb9dfbfb6ec3bac423545a13
+  rswag-ui (2.17.0) sha256=5f707b9b5e8171ddf9f519f6e401e79e419bd1d07387508603e76124f2443212
   rubocop (1.86.2) sha256=bb2e97f635eda42c448f2588f4a6ff78f221b8bdfdf65b1e9b07fbd57521b45d
   rubocop-ast (1.49.1) sha256=4412f3ee70f6fe4546cc489548e0f6fcf76cafcfa80fa03af67098ffed755035
   rubocop-performance (1.26.1) sha256=cd19b936ff196df85829d264b522fd4f98b6c89ad271fa52744a8c11b8f71834
